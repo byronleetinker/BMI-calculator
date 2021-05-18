@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox, Label
 import tkinter as tk
+# Programs knows where to get or receive information from
 
 window = Tk()
 window.title('BMI calculator')  # name of my window
@@ -15,7 +16,7 @@ frame = Frame(window, width=500, height=300, borderwidth=2)
 frame.place(relx=0.10, rely=0.3)
 frame["bg"] = "teal"
 
-# Label and Entries
+# Label and Entries. Entries are the bars you type in. labels are the names of the entry bars.
 weight = Label(frame, text="Weight:")
 weight.place(relx=0.0, rely=0.1)
 
@@ -44,7 +45,8 @@ bmi_field = Entry(window, state='readonly')
 bmi_field.place(relx=0.4, rely=0.6)
 
 
-# Functions for gender bar, clear button, calculate and exit button
+# Functions for gender bar, clear button, calculate and exit button. You need to define a function before you do your
+# buttons.
 
 def activate(value):
     variable.set(value)
@@ -93,7 +95,7 @@ def clear():
     variable.set(options[0])
 
 
-# Gender bar and clear, calculate and exit buttons
+# Gender bar and clear, calculate and exit buttons. Buttons need to be placed under the function.
 
 options = ["Select", "Male", "Female"]
 variable = StringVar(frame)
@@ -110,4 +112,5 @@ calculate.place(relx=0.3, rely=0.7)
 Quit = Button(window, text="Exit", command=exit)
 Quit.place(relx=0.8, rely=0.7)
 
+# Very important because without a mainloop(), the window will keep running and no results will be displayed
 window.mainloop()
